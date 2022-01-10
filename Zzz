@@ -1,0 +1,8 @@
+const agent = require('secret-agent');
+
+(async () => {
+  await agent.goto('https://example.org');
+  const title = await agent.document.title;
+  const intro = await agent.document.querySelector('p').textContent;
+  await agent.close();
+})();
